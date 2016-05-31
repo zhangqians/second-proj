@@ -1,18 +1,20 @@
 'use strict';
-
-function double_to_one(collection) {
-//在这里写入代码
 var arr=[];
+function double_to_one(collection) 
+{
+//在这里写入代码
+
 for(var i=0;i<collection.length;i++)
 {
-	var arrs=new Array();
-	arrs=collection[i];
-	for(var j=0;j<arrs.length;j++)
+	if(collection[i] instanceof Array)
 	{
-		var mytmp=arrs[j];
-		arr.push(mytmp);
+	double_to_one(collection[i]);
+	}
+	else
+	{
+		arr.push(collection[i]);
 		}
-	}  
+}
 	return arr;
 }
 
